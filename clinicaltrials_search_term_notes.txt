@@ -1,0 +1,22 @@
+CONDITION:
+Specific conditions they have, separated by "OR" keyword
+
+OVERALLSTATUS:
+"NOT completed AND NOT active" should always be part of the search. You may want to print the output in order of other statuses, like recruiting.
+
+GENDER:
+given gender and "All" should be options.
+
+HEALTHYVOLUNTEERS:
+probably means co-morbidity, but unknown. Possibly exclude, or include in the final output but not part of the search criteria.
+
+//The above should be broad, catch-all terms to get an initial list of studies. Everything after will require some coding.
+
+MINIMUMAGE:
+Seems to always be in a "__ Years" format. Can extract via regular expression.
+
+MAXIMUMAGE:
+Same as MINIMUMAGE, though this can be omitted in the results. Use them to create a range (no upper bound if MAXIMUMAGE not present) that can be matched to survey results.
+
+ELIGIBILITYCRITERIA:
+Split into "Inclusion Criteria:||" and "||Exclusion Criteria:||" sections. This will be the most variable, but will probably be most used for the exclusion bit.
